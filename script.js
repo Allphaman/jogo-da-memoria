@@ -68,6 +68,3 @@ for (let i = 0; i<=cartas.length; i++){
     container.appendChild(box)
 
 }
-
-
-
