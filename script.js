@@ -11,7 +11,7 @@ const cartas = [
     },
     {
         "nome": "donuts",
-        "imagem": "donuts.png",
+        "imagem": "images/donuts.png",
         "id": 3,
     },
     {
@@ -40,7 +40,7 @@ const cartas2 = [
     },
     {
         "nome": "donuts",
-        "imagem": "donuts.png",
+        "imagem": "images/donuts.png",
         "id": 3,
     },
     {
@@ -58,13 +58,28 @@ const cartas2 = [
 
 let container = document.querySelector(".container")
 
+function misturar() {
+    for (let i = cartas.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [cartas[i], cartas[j]] = [cartas[j], cartas[i]];
+    }
+    return cartas;
+}
 for (let i = 0; i<=cartas.length; i++){
     let box = document.createElement("div")
-    box.setAttribute = ("class", cartas[i].nome)
+    box.setAttribute = ("class", cartas[i].id)
     box.innerHTML = `
         <img src="${cartas[i].imagem}" alt="">
         <img src="images/Mastertech.png" alt="">
     `
     container.appendChild(box)
 
+    let box2 = document.createElement("div")
+    box2.setAttribute = ("class", cartas2[i].id)
+    box2.innerHTML = `
+        <img src="${cartas2[i].imagem}" alt="">
+        <img src="images/Mastertech.png" alt="">
+    `
+    container.appendChild(box2)
 }
+
